@@ -3,8 +3,38 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>{{title}}</title>
+  <style>
+    @keyframes spinner {
+      to {transform: rotate(360deg);}
+    }
+
+    .spinner {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .spinner:before {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;
+      margin-top: -10px;
+      margin-left: -10px;
+      border-radius: 50%;
+      border-top: 2px solid #07d;
+      border-right: 2px solid transparent;
+      animation: spinner .6s linear infinite;
+    }
+  </style>
 </head>
 <body>
+  <div class="spinner"></div>
+
   <script type="text/javascript" src="script.js"></script>
   <script type="text/javascript">
     var options = {
